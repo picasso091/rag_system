@@ -36,7 +36,7 @@ class InteractiveCLI:
                 print("\n" + "-"*60)
                 print("Sources:")
                 for i, source in enumerate(result["sources"], 1):
-                    print(f"{i}. Page {source['page']}: {source['content'][:100]}...")
+                    print(f"{i}. Page {source['page']+1}: {source['content'][:100]}...")
                 print("="*60 + "\n")
             
             except KeyboardInterrupt:

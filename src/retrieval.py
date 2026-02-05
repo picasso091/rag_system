@@ -1,6 +1,7 @@
-from langchain.vectorstores import Chroma
-from langchain.embeddings import HuggingFaceEmbeddings
-from langchain.schema import Document
+from langchain_community.vectorstores import Chroma
+# from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
+from langchain_core.documents import Document
 from typing import List
 import os
 
@@ -24,7 +25,7 @@ class Retrieval:
             collection_name=collection_name,
             persist_directory=self.db_path
         )
-        self.vectorstore.persist()
+        # self.vectorstore.persist()
         print(f"Vector store created with {len(documents)} documents")
     
     def load(self, collection_name: str = "documents"):
